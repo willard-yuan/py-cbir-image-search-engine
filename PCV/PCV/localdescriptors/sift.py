@@ -6,7 +6,8 @@ from pylab import *
 
 def process_image(imagename,resultname,params="--edge-thresh 10 --peak-thresh 5"):
     """ process an image and save the results in a file"""
-    path = os.path.abspath(os.path.join(os.path.dirname("__file__"),os.path.pardir))
+ #   path = os.path.abspath(os.path.join(os.path.dirname("__file__"),os.path.pardir))
+    path = os.path.abspath(os.path.join(os.path.dirname("__file__")))
     path = path+"\\utils\\win32vlfeat\\sift.exe "
     if imagename[-3:] != 'pgm':
 	    #create a pgm file
