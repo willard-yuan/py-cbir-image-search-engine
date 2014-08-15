@@ -13,14 +13,14 @@ f = open('./first500/vocabulary.pkl', 'rb')
 voc = pickle.load(f)
 f.close()
 
-src = imagesearch.Searcher('testImaAdd.db',voc)
+src = imagesearch.Searcher('web.db',voc)
 locs,descr = sift.read_features_from_file(featlist[0])
 iw = voc.project(descr)
 
 print 'ask using a histogram...'
 print src.candidates_from_histogram(iw)[:10]
 
-src = imagesearch.Searcher('testImaAdd.db',voc)
+src = imagesearch.Searcher('web.db',voc)
 print 'try a query...'
 
 nbr_results = 12

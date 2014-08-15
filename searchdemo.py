@@ -42,7 +42,7 @@ class SearchDemo:
             """
 
     def index(self, query=None):
-        self.src = imagesearch.Searcher('testImaAdd.db', self.voc)
+        self.src = imagesearch.Searcher('web.db', self.voc)
 
         html = self.header
         html += """

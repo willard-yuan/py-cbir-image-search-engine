@@ -15,7 +15,7 @@ featlist = [imlist[i][:-3]+'sift' for i in range(nbr_images)]
 with open('./first500/vocabulary.pkl', 'rb') as f:
     voc = pickle.load(f)
 
-src = imagesearch.Searcher('testImaAdd.db',voc)
+src = imagesearch.Searcher('noweb.db',voc)
 
 # 查询图线索引和返回的图像数
 # index of query image and number of results to return
