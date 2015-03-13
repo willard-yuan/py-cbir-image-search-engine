@@ -34,8 +34,11 @@ def process_image(imagename,resultname):
 def read_features_from_file(filename):
 	""" read feature properties and return in matrix form"""
 	#f = loadtxt(filename)
+	#return f[:,:4],f[:,4:] # feature locations, descriptors
 	f = skimage.io.load_sift(filename)
-	return f[:,:4],f[:,4:] # feature locations, descriptors
+	loc = [[x[0],x[1],x[2],x[3]] for x in f]
+	des = [x[4] for x in f]
+	return loc,des # feature locations, descriptors
 
 
 def write_features_to_file(filename,locs,desc):
