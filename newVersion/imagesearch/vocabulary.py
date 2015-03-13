@@ -36,7 +36,7 @@ class Vocabulary(object):
         # go through all training images and project on vocabulary
         imwords = zeros((nbr_images,self.nbr_words))
         for i in range( nbr_images ):
-            imwords[i] = self.project(descr[i])
+            imwords[i] = self.project(array(descr[i]))
         
         nbr_occurences = sum( (imwords > 0)*1 ,axis=0)
         
