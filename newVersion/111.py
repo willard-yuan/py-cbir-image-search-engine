@@ -12,16 +12,16 @@ voc,distortion = kmeans(descriptors[::subsampling,:],k,1)
 nbr_words = voc.shape[0]
         
 # go through all training images and project on vocabulary
-imwords = zeros((nbr_images,self.nbr_words))
+imwords = zeros((nbr_images, nbr_words))
 for i in range( nbr_images ):
-    imwords[i] = project(descr[i])
+    imwords[i] = project(array(descr[i]))
         
     nbr_occurences = sum( (imwords > 0)*1 ,axis=0)
         
     idf = log( (1.0*nbr_images) / (1.0*nbr_occurences+1) )
     trainingdata = featurefiles
 
-def project(self,descriptors):
+def project(descriptors):
     """ Project descriptors on the vocabulary
         to create a histogram of words. """
         
