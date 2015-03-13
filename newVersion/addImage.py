@@ -8,7 +8,7 @@ imlist = get_imlist('./first500/')
 nbr_images = len(imlist)
 featlist = [imlist[i][:-3]+'sift' for i in range(nbr_images)]
 # load vocabulary
-with open('./first500/vocabulary.pkl', 'rb') as f:
+with open('./vocabulary.pkl', 'rb') as f:
     voc = pickle.load(f)
 # create indexer
 indx = imagesearch.Indexer('web.db',voc)

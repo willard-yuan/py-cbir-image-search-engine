@@ -48,7 +48,7 @@ class Indexer(object):
         imid = self.get_id(imname)
         
         # get the words
-        imwords = self.voc.project(descr)
+        imwords = self.voc.project(array(descr))
         nbr_words = imwords.shape[0]
         
         # link each word to image
