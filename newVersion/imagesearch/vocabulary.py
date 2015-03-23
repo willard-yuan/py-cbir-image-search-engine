@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from numpy import *
 from scipy.cluster.vq import *
 
@@ -40,7 +41,9 @@ class Vocabulary(object):
         
         nbr_occurences = sum( (imwords > 0)*1 ,axis=0)
         
-        self.idf = log( (1.0*nbr_images) / (1.0*nbr_occurences+1) )
+        #http://zhangjunhd.github.io/2014/09/30/text-clustering.html
+        
+        self.idf = log( (1.0*nbr_images) / (1.0*nbr_occurences+1) ) # 这里仅了idf,另外这里写得应该有些问题
         self.trainingdata = featurefiles
     
     def project(self,descriptors):
